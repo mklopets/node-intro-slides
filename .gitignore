@@ -1,0 +1,9 @@
+*.swo
+*.swp
+*.swn
+*.un~
+node_modules/
+
+public/css/
+
+.env

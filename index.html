@@ -1,0 +1,296 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Node.js</title>
+
+  <meta name="description" content="A jQuery library for modern HTML presentations">
+  <meta name="author" content="Caleb Troughton">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,500italic,700,900,900italic,700italic,300italic' rel='stylesheet' type='text/css'>
+  
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" media="screen" href="../core/deck.core.css">
+  <link rel="stylesheet" media="screen" href="../extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="../extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="../extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="../extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="../extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../themes/style/marko.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="../core/print.css">
+
+  <script src="../modernizr.custom.js"></script>
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides -->
+    <section class="slide" id="title-slide">
+		<h1>Node.js</h1>
+		<h2>Marko Klopets</h2>
+    </section>
+
+    <section class="slide">
+		<h2>What is Node and how do I use it?</h2>
+		<p class="slide">Node is a Javascript runtime</p>
+		<p class="slide">... so it runs Javascript</p>
+		<p class="slide">V8 engine like in Google Chrome</p>
+		<p class="slide">Comes with special libraries and tools to make life easy</p>
+		<pre class="slide"><code class="prettyprint">console.log('Hello World');</code></pre>
+		<p class="slide">^ save into <em class="code">bacon.js</em></p>
+		<pre class="slide"><code class="prettyprint">node bacon.js</code></pre>
+    </section>
+
+	<section class="slide image-title-slide" id="express-title">
+		<img src="https://camo.githubusercontent.com/fc61dcbdb7a6e49d3adecc12194b24ab20dfa25b/68747470733a2f2f692e636c6f756475702e636f6d2f7a6659366c4c376546612d3330303078333030302e706e67" alt="">
+	</section>
+	
+	<section class="slide" id="its-a-framework">
+		<blockquote>
+			<p>It's a framework</p>
+			<small class="author">-Benjamin Franklin</small>
+		</blockquote>
+		<img class="slide" src="https://media.giphy.com/media/tU5NUKQwt5l04/giphy.gif" alt="">
+	</section>
+	
+	<section class="slide" id="library-or-framework">
+		<h2>Library or framework?</h2>
+		<ul>
+			<li class="slide">Pre-written functionality</li>
+			<li class="slide">Means of code reusability</li>
+		</ul>
+		<p class="slide">but!</p>
+	</section>
+	
+	<section class="slide" id="library">
+		<h2>Libraries</h2>
+		<blockquote>Library = you are in control</blockquote>
+		<p class="slide">Example: jQuery</p>
+		<ul>
+			<li class="slide">Useful helper functions</li>
+			<li class="slide">Brings cross-browser compatibility</li>
+			<li class="slide">Avoids reinventing the wheel</li>
+			<li class="slide">Fits into your workflow</li>
+		</ul>
+	</section>
+	
+	<section class="slide" id="framework">
+		<h2>Frameworks</h2>
+		<blockquote>Framework = framework controls you</blockquote>
+		<img src="https://qph.is.quoracdn.net/main-qimg-61df031478c700c3a6524b8f69ed0c58?convert_to_webp=true">
+		<p class="slide">Examples: Rails (Ruby), Laravel (PHP), Express (Node.js)</p>
+		<ul>
+			<li class="slide">You just fill in the blanks</li>
+			<li class="slide">Deal with business logic, not getting your server running</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="express-basic-usage">
+		<h2>Basic usage</h2>
+		<pre><code class="prettyprint">var express = require('express');
+var app = express();
+
+// TODO: party
+</code></pre>
+	</section>
+	
+	<section class="slide" id="express-server">
+		<h2>Getting a server up</h2>
+		<pre><code class="prettyprint">var port = process.env.PORT || 3000;
+app.listen(port);
+console.log('Listening at port', port); // so that you know the code's running</code></pre>
+	</section>
+
+	<section class="slide" id="first-response">
+		<h2>Seeing some response</h2>
+		<pre><code class="prettyprint">app.get('/test', function(req, res, next) {
+    res.send("It's working!");
+});</code></pre>
+		<pre class="slide" id="node-run"><code>node server.js</code></pre>
+		<img class="slide" id="its-working" src="http://i.imgur.com/T5kgblJ.png">
+	</section>
+
+	<section class="slide" id="middleware-title">
+		<h1>Middleware</h1>
+	</section>
+	
+	<section class="slide" id="middleware-intro">
+		<h2>Middleware</h2>
+		<p>Is run "in the middle" of something, as kind of a side effect</p>
+		<div class="slide">
+			<p>Examples:</p>
+			<ul>
+				<li class="slide">on every web server request</li>
+				<li class="slide">every time you authenticate an user</li>
+				<li class="slide">every time you get data from the database</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="slide" id="middleware-intro">
+		<h2>Middleware</h2>
+		<pre><code class="prettyprint">app.use(function() {
+    console.log('I was just run as middleware');
+});</code></pre>
+		<p class="slide">Go back to <em class="code">/test</em></p>
+		<p class="slide"><em class="code">console.log()</em> worked but page didn't load. WTF?</p>
+		<p class="slide"><em class="code">next()</em>, please</p>
+		<pre class="slide"><code class="prettyprint">app.use(function(req, res, next) {
+    console.log('I was just run as middleware');
+    next(); // continue to next middleware
+});</code></pre>
+	</section>
+	
+	<section class="slide" id="express-static-middleware">
+		<h2>Express static middleware</h2>
+		<p class="slide">Goal: serve up static content from filesystem</p>
+		<h3 class="slide">How?</h3>
+		<ul>
+			<li class="slide">Every time a web request is made:</li>
+			<li class="slide">See if there is a matching static file</li>
+			<li class="slide">If yes, show it</li>
+			<li class="slide">else continue with next middleware</li>
+		</ul>
+	</section>
+	
+	<section class="slide" id="express-static-pseudocode">
+		<h2>Pseudocode</h2>
+		<pre><code class="prettyprint">function handleStaticFiles(req, res, next) {
+	if (thereIsFile(req.fileName)) {
+		renderFile(req.fileName);
+	}
+	else {
+		next(); // continue with next middleware
+	}
+}</code></pre>
+		<pre class="slide"><code class="prettyprint">app.use(handleStaticFiles); // register the funciton as middleware</code></pre>
+	</section>
+
+	<section class="slide" id="express-static-usage">
+		<h2>Real world</h2>
+		<p class="slide">The code has already been written (yay 4 frameworks)</p>
+		<p class="slide">You just need to tell Express to use it</p>
+		<pre class="slide"><code class="prettyprint">app.use(express.static('public'));</code></pre>
+		<h3 class="slide"><em>Order matters!</em></h3>
+	</section>
+
+	<section class="slide">
+		<h2>So far we've covered</h2>
+		<ul>
+			<li class="slide">What exactly Node is</li>
+			<li class="slide">How to use Node</li>
+			<li class="slide">Framework vs library / what is Express</li>
+			<li class="slide">Basic server using Express</li>
+			<li class="slide">What is middleware</li>
+			<li class="slide">Serving static files using Express</li>
+		</ul>
+	</section>
+	
+	<section class="slide image-title-slide">
+		<img class="bigass" src="http://www.reactiongifs.com/wp-content/uploads/2013/10/tim-and-eric-mind-blown.gif">
+	</section>
+	
+	<section class="slide image-title-slide">
+		<blockquote><p>"What about my Icefire project? :("</p><small class="author">-Toomas Hendrik Ilves</small></blockquote>
+	</section>
+
+	<section class="slide" id="get-v-post">
+		<h2>GET v POST</h2>
+		<ul>
+			<li class="slide">Both can send data</li>
+			<li class="slide">GET reveals data in URL</li>
+			<li class="slide">Use POST for signups, logins, commenting etc</li>
+			<li class="slide">Use GET for search etc (preserves data in URL)</li>
+		</ul>
+		<p class="slide">Let's use POST (privacy, yay)</p>
+		<pre class="slide"><code class="prettyprint">method="POST"</code></pre>
+		<pre class="slide"><code class="prettyprint">action="/submit"</code></pre>
+	</section>
+
+	<section class="slide" id="post-route">
+		<h2>Creating a new route</h2>
+		<pre class="slide"><code class="prettyprint">app.post('/submit', function(req, res, next) {
+	res.send('You submitted the form!');
+})</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>Getting the data</h2>
+		<pre class="slide"><code class="prettyprint">var bodyParser = require('body-parser');</code></pre>
+		<pre class="slide"><code class="prettyprint">npm i --save body-parser</code></pre>
+		<p class="slide">Register it as middleware:</p>
+		<pre class="slide"><code class="prettyprint">app.use(bodyParser.urlencoded({ extended: false  })); // copy-paste from GitHub docs</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>Getting the data</h2>
+		<pre><code class="prettyprint">app.post('/submit', function(req, res, next) {
+    // req.body contains the data sent via POST
+    console.log(req.body);
+
+    res.send('You submitted the form!');
+});</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>Getting the data</h2>
+		<pre><code class="prettyprint">app.post('/submit', function(req, res, next) {
+    res.json(req.body);
+});</code></pre>
+		<img class="slide" src="http://i.imgur.com/gA6gbqA.png">
+	</section>
+	
+	<section class="slide image-title-slide" id="good-job">
+		<img class="bigass" src="https://media.giphy.com/media/QMkPpxPDYY0fu/giphy.gif">
+	</section>
+	
+	<section class="slide">
+		<h2>Before sending the zip</h2>
+		<ul>
+			<li class="slide">Currently there are two cities &amp; villages (name attributes). <em class="code">disabled</em> property might help.</li>
+			<li class="slide">Code style: indentation, spaces before/after ifs, loops &amp; parentheses. <a href="https://github.com/mklopets/autofight/blob/master/autofight.js">Example of my JS</a>.</li>
+		</ul>
+	</section>
+	
+	<section class="slide image-title-slide" id="good-job-again">
+		<img class="bigass" src="https://media.giphy.com/media/QMkPpxPDYY0fu/giphy.gif">
+	</section>
+	
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+  </div>
+
+<script src="../jquery.min.js"></script>
+
+<!-- Deck Core and extensions -->
+<script src="../core/deck.core.js"></script>
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+  $.deck('.slide');
+});
+</script>
+
+</body>
+</html>
