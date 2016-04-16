@@ -166,12 +166,12 @@ console.log('Listening at port', port); // so that you know the code's running</
 	<section class="slide" id="express-static-pseudocode">
 		<h2>Pseudocode</h2>
 		<pre><code class="prettyprint">function handleStaticFiles(req, res, next) {
-	if (thereIsFile(req.fileName)) {
-		renderFile(req.fileName);
-	}
-	else {
-		next(); // continue with next middleware
-	}
+    if (thereIsFile(req.fileName)) {
+        renderFile(req.fileName);
+    }
+    else {
+        next(); // continue with next middleware
+    }
 }</code></pre>
 		<pre class="slide"><code class="prettyprint">app.use(handleStaticFiles); // register the funciton as middleware</code></pre>
 	</section>
@@ -187,7 +187,7 @@ console.log('Listening at port', port); // so that you know the code's running</
 	<section class="slide">
 		<h2>So far we've covered</h2>
 		<ul>
-			<li class="slide">What exactly Node is</li>
+			<li class="slide">What is Node even</li>
 			<li class="slide">How to use Node</li>
 			<li class="slide">Framework vs library / what is Express</li>
 			<li class="slide">Basic server using Express</li>
@@ -196,7 +196,7 @@ console.log('Listening at port', port); // so that you know the code's running</
 		</ul>
 	</section>
 	
-	<section class="slide image-title-slide">
+	<section class="slide image-title-slide" id="your-brain-exploding">
 		<img class="bigass" src="http://www.reactiongifs.com/wp-content/uploads/2013/10/tim-and-eric-mind-blown.gif">
 	</section>
 	
