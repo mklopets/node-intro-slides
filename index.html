@@ -130,13 +130,13 @@ console.log('Listening at port', port); // so that you know the code's running</
 	
 	<section class="slide" id="middleware-intro">
 		<h2>Middleware</h2>
-		<p>Is run "in the middle" of something, as kind of a side effect</p>
+		<p>Is run "in the middle" of something, as <em>kind of a side effect</em></p>
 		<div class="slide">
-			<p>Examples:</p>
+			<p>For example, on every web request:</p>
 			<ul>
-				<li class="slide">on every web server request</li>
-				<li class="slide">every time you authenticate an user</li>
-				<li class="slide">every time you get data from the database.</li>
+				<li class="slide">Check if user is logged in (act accordingly)</li>
+				<li class="slide">Log to the database</li>
+				<li class="slide">Render a view.</li>
 			</ul>
 		</div>
 	</section>
@@ -251,7 +251,7 @@ console.log('Listening at port', port); // so that you know the code's running</
 		<pre><code class="prettyprint">app.post('/submit', function(req, res, next) {
     res.json(req.body);
 });</code></pre>
-		<img class="slide" src="http://i.imgur.com/gA6gbqA.png">
+		<!--<img class="slide" src="http://i.imgur.com/gA6gbqA.png">-->
 	</section>
 	
 	<section class="slide image-title-slide" id="good-job">
