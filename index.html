@@ -80,7 +80,7 @@
 			<li class="slide">Useful helper functions</li>
 			<li class="slide">Brings cross-browser compatibility</li>
 			<li class="slide">Avoids reinventing the wheel</li>
-			<li class="slide">Fits into your workflow</li>
+			<li class="slide">Fits into your workflow.</li>
 		</ul>
 	</section>
 	
@@ -93,6 +93,10 @@
 			<li class="slide">You just fill in the blanks</li>
 			<li class="slide">Deal with business logic, not getting your server running</li>
 		</ul>
+	</section>
+
+	<section class="slide">
+		<h1>"I want to see code"</h1>
 	</section>
 
 	<section class="slide" id="express-basic-usage">
@@ -132,7 +136,7 @@ console.log('Listening at port', port); // so that you know the code's running</
 			<ul>
 				<li class="slide">on every web server request</li>
 				<li class="slide">every time you authenticate an user</li>
-				<li class="slide">every time you get data from the database</li>
+				<li class="slide">every time you get data from the database.</li>
 			</ul>
 		</div>
 	</section>
@@ -145,7 +149,7 @@ console.log('Listening at port', port); // so that you know the code's running</
 		<p class="slide">Go back to <em class="code">/test</em></p>
 		<p class="slide"><em class="code">console.log()</em> worked but page didn't load. WTF?</p>
 		<p class="slide"><em class="code">next()</em>, please</p>
-		<pre class="slide"><code class="prettyprint">app.use(function(req, res, next) {
+		<pre class="slide"><code class="prettyprint">app.use(function(<em class="yellow">req, res, next</em>) {
     console.log('I was just run as middleware');
     next(); // continue to next middleware
 });</code></pre>
@@ -179,7 +183,7 @@ console.log('Listening at port', port); // so that you know the code's running</
 	<section class="slide" id="express-static-usage">
 		<h2>Real world</h2>
 		<p class="slide">The code has already been written (yay 4 frameworks)</p>
-		<p class="slide">You just need to tell Express to use it</p>
+		<p class="slide">You just need to tell Express to use it:</p>
 		<pre class="slide"><code class="prettyprint">app.use(express.static('public'));</code></pre>
 		<h3 class="slide"><em>Order matters!</em></h3>
 	</section>
@@ -192,7 +196,7 @@ console.log('Listening at port', port); // so that you know the code's running</
 			<li class="slide">Framework vs library / what is Express</li>
 			<li class="slide">Basic server using Express</li>
 			<li class="slide">What is middleware</li>
-			<li class="slide">Serving static files using Express</li>
+			<li class="slide">Serving static files using Express.</li>
 		</ul>
 	</section>
 	
@@ -201,7 +205,7 @@ console.log('Listening at port', port); // so that you know the code's running</
 	</section>
 	
 	<section class="slide image-title-slide">
-		<blockquote><p>"What about my Icefire project? :("</p><small class="author">-Toomas Hendrik Ilves</small></blockquote>
+		<blockquote><p>"What about my Icefire project?! :("</p><small class="author">-Toomas Hendrik Ilves</small></blockquote>
 	</section>
 
 	<section class="slide" id="get-v-post">
@@ -210,7 +214,7 @@ console.log('Listening at port', port); // so that you know the code's running</
 			<li class="slide">Both can send data</li>
 			<li class="slide">GET reveals data in URL</li>
 			<li class="slide">Use POST for signups, logins, commenting etc</li>
-			<li class="slide">Use GET for search etc (preserves data in URL)</li>
+			<li class="slide">Use GET for search etc (preserves data in URL).</li>
 		</ul>
 		<p class="slide">Let's use POST (privacy, yay)</p>
 		<pre class="slide"><code class="prettyprint">method="POST"</code></pre>
@@ -219,9 +223,9 @@ console.log('Listening at port', port); // so that you know the code's running</
 
 	<section class="slide" id="post-route">
 		<h2>Creating a new route</h2>
-		<pre class="slide"><code class="prettyprint">app.post('/submit', function(req, res, next) {
-	res.send('You submitted the form!');
-})</code></pre>
+		<pre class="slide"><code class="prettyprint">app.<em class="yellow">post</em>('/submit', function(req, res, next) {
+    res.send('You submitted the form!');
+});</code></pre>
 	</section>
 
 	<section class="slide">

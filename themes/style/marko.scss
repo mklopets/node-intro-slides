@@ -39,6 +39,12 @@ em.code {
 	border-radius: 5px;
 	padding: 10px;
 }
+em.yellow {
+	background: rgba(255,255,0,0.7);
+	border-radius: 10px;
+	padding: 10px 0;
+	font-style: inherit;
+}
 
 pre {
 	border-color:#ccc;
@@ -49,7 +55,7 @@ code {
 }
 
 img {
-	image-rendering: pixelated;
+	/*image-rendering: pixelated;*/
 }
 
 img.bigass {

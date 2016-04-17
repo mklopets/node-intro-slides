@@ -328,6 +328,13 @@ em.code {
   padding: 10px;
 }
 
+em.yellow {
+  background: rgba(255, 255, 0, 0.7);
+  border-radius: 10px;
+  padding: 10px 0;
+  font-style: inherit;
+}
+
 pre {
   border-color: #ccc;
 }
@@ -337,10 +344,7 @@ code {
 }
 
 img {
-  -ms-interpolation-mode: nearest-neighbor;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
+  /*image-rendering: pixelated;*/
 }
 
 img.bigass {
